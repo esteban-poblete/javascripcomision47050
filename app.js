@@ -8,7 +8,6 @@ formulario.addEventListener("submit", (e) => {
     error("completar ambos campos");
     return;
   }
-
   api(nombreCiudad.value, nombrePais.value);
 });
 function api(ciudad, pais) {
@@ -19,6 +18,7 @@ function api(ciudad, pais) {
     .then((data) => {
       return data.json();
     })
+
     .then((dataJSON) => {
       if (dataJSON.cod == "404") {
         error("ciudad no encontrada");
@@ -26,10 +26,7 @@ function api(ciudad, pais) {
         encontrada(dataJSON);
       }
     });
-  localStorage.setItem("nombre", JSON.stringify(contenido));
 }
-const minombreStorage = JSON.parse(localStorage.getItem("nombre"));
-console.log(minombreStorage);
 function encontrada(data) {
   const {
     name,
@@ -42,11 +39,11 @@ function encontrada(data) {
 
   const contenido = document.createElement("div");
   contenido.innerHTML = `
-    <h4> clima en ${name}</h4>
-    <img src="https://openweathermap.org/img/wn/${icono.icon}@2x.png" alt="iconos">
-    <h2>${grados}°C</h2>
-    <p>temp max: ${max}°C</p>
-    <p>temp min: ${min}°C</p>`;
+    <h4 class= "climas" data-atropos-offset="10"> Clima en  ${name}</h4>
+    <img data-atropos-offset="4" src="https://openweathermap.org/img/wn/${icono.icon}@2x.png" alt="iconos">
+    <h2 class="climas" data-atropos-offset="-3">Temp Actual: ${grados}°C</h2>
+    <h3 class= "climas" data-atropos-offset="6">Temp Max: ${max}°C</h3>
+    <h4 class="climas" data-atropos-offset="-4">Temp Min: ${min}°C</h4>`;
   resultado.appendChild(contenido);
 }
 function error(mensaje) {

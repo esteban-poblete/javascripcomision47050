@@ -3,33 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./atropos.min.css" />
     <link rel="stylesheet" href="./style.css" />
     <title>APP CLIMA</title>
   </head>
   <body>
-    <div class="container dia">
-      <h1 class="buscador">Buscador de clima</h1>
-      <div class="resultado"></div>
-      <form action="" method="post" class="tiempo">
-        <input
-          type="text"
-          name="ciudad"
-          id="ciudad"
-          placeholder="agregue su ciudad"
-        />
-        <select name="" id="pais">
-          <option disabled selected value="">Seleccione su pais</option>
-          <option value="AR">Argentina</option>
-          <option value="CO">Colombia</option>
-          <option value="ES">España</option>
-          <option value="US">Estados Unidos</option>
-          <option value="MX">Mexico</option>
-          <option value="BR">Brazil</option>
-        </select>
-        <input class="input" type="submit" name="" id="" value="ver-tiempo" />
-      </form>
+    <div class="atropos my-atropos">
+      <div class="atropos-scale">
+        <div class="atropos-rotate">
+          <div class="atropos-inner">
+            <div class="container dia">
+              <h1 data-atropos-offset="10" class="buscador">
+                PRONOSTICO DEL TIEMPO
+              </h1>
+              <div class="resultado"></div>
+              <form action="" method="post" class="tiempo">
+                <input
+                  class="input"
+                  data-atropos-offset="6"
+                  type="text"
+                  name="ciudad"
+                  id="ciudad"
+                  placeholder="agregue su ciudad"
+                />
+                <select
+                  class="input"
+                  data-atropos-offset="-5"
+                  name=""
+                  id="pais"
+                >
+                  <option disabled selected value="">Seleccione su pais</option>
+                  <option value="AR">Argentina</option>
+                  <option value="CO">Colombia</option>
+                  <option value="ES">España</option>
+                  <option value="US">Estados Unidos</option>
+                  <option value="MX">Mexico</option>
+                  <option value="BR">Brazil</option>
+                </select>
+                <input
+                  class="input"
+                  data-atropos-offset="6"
+                  class="input"
+                  type="submit"
+                  name=""
+                  id=""
+                  value="buscar"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
     <script src="./app.js"></script>
+    <script src="./atropos.min.js"></script>
+    <script>
+      const myAtropos = Atropos({
+        el: ".my-atropos",
+        activeOffset: 40,
+        shadowScale: 1.05,
+        rotateXMax: 15,
+        rotateYMax: 15,
+        Shadow: true,
+        shadowOffset: 50,
+        shadowScale: 1,
+        highlight: true,
+        onEnter() {},
+        onLeave() {},
+        onRotate(x, y) {},
+      });
+    </script>
   </body>
 </html>

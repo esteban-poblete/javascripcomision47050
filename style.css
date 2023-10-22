@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,200&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -21,16 +22,21 @@ body {
 }
 
 .container.dia {
-  background-image: url(./img/img-dia.jpg);
+  background-image: url(./img/dia-noche.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 .container.noche {
-  background-image: url(./img/img-noche.jpg);
+  background-image: url(./img/98.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+h1 {
+  font-family: "Roboto Serif", sans-serif;
+  color: #f3e0ec;
+  font-size: 25px;
 }
 .resultado {
   display: flex;
@@ -48,4 +54,20 @@ body {
 }
 .resultado {
   margin: 5px 0 5px;
+}
+.atropos-scale,
+.atropos-rotate,
+.atropos-inner,
+.container {
+  overflow: visible;
+  position: relative;
+}
+.climas {
+  font-family: "Roboto Serif", serif;
+  color: #dddfdf;
+  font-size: 20px;
+}
+.input {
+  color: #8b575c;
+  font-family: "Roboto Serif", serif;
 }
